@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,50 +16,37 @@
    </header>
    <div class="banner">
     <div class="box">
-        <label for="ropani">ropani:</label><br>
-        <input type="number" id="ropani" name="ropani" placeholder="ropani">  <br>  
-        
-        
-
-        <label for="aana">aana:</label><br>
-        <input type="number" id="aana" name="aana" placeholder="aana"><br>   
-        
-        
-
-        <label for="paisa">paisa:</label><br>
-        <input type="number" id="paisa" name="paisa" placeholder="paisa"><br> 
-
-
-
-        <label for="daam">daam:</label><br>
-        <input type="number" id="daam" name="daam" placeholder="daam"><br>   
-
-
-
-        <label for="squarefeet">squarefeet:</label><br>
+        <label for="ropani">squarefeet:</label><br>
         <input type="number" id="squarefeet" name="squarefeet" placeholder="squarefeet"> <br> 
-
-
-
+             
+      <div id="ropani"></div>
         <br>
-        <input type="button"id="button" value="submit">
-         
+        <input type="button"id="button" value="submit" onclick="fun1();">
+         <p id="ans"></p>
     
     </div>
 </div>
 <script>
-    const ropani = document.getElementById('ropani');
-const aana = document.getElementById('aana');
-const paisa = document.getElementById('paisa');
-const daam = document.getElementById('daam');
-const squarefeet = document.getElementById('squarefeet');
 
+    
+    
 
-let a ,b ,c;
-function fun1(){
-    squarefeet.innerHTML=ropani.value;
+    function fun1()
+   {
+    const squarefeet =Number (document.getElementById('squarefeet').value);
+     let r,remainder,remainder2,remainder3;
+    let aana,paisa,daam;
+     r=squarefeet/5476;
+     remainder=squarefeet%5476;
+     aana=remainder/342.25;
+     remainder2=remainder%342.25;
+     paisa=remainder2/86.5625;
+     remainder3=remainder2%86.5625;
+     daam=remainder3/21.390625;
+     document.getElementById("ropani").innerHTML=r+" ropani "+aana+" aana "+paisa+" paisa "+daam+" daam ";
+    // document.getElementById("ans").innerHTML=typeof(squarefeet);
+   
 }
-button.addEventListener("click",fun1);
 
 
 </script>
